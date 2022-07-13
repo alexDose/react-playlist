@@ -1,6 +1,16 @@
 import React from "react";
 import '../cursor.css'
 
-export const AccordionTitle = () => {
-    return <h3 className={'cursor'}>menu</h3>
+type AccordionTitleType = {
+    callback: () => void
+    title: string
+}
+
+export const AccordionTitle = (props: AccordionTitleType) => {
+
+    const onClickHandler = () => {
+        props.callback()
+    }
+
+    return <h3 className={'cursor'} onClick={onClickHandler}>--{props.title}--</h3>
 }

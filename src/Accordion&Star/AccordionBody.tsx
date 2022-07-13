@@ -1,15 +1,7 @@
 import React from "react";
 
-type AccordionBody = {
-/*
-    collapsed: boolean
-*/
-}
+export const AccordionBody = () => {
 
-export const AccordionBody = (props: AccordionBody) => {
-/*
-    if (props.collapsed) {
-*/
         return (
             <div>
                 <ul>
@@ -19,9 +11,4 @@ export const AccordionBody = (props: AccordionBody) => {
                 </ul>
             </div>
         )
-/*    } else {
-        return (
-            <div></div>
-        )
-    }*/
 }

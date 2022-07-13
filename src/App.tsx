@@ -6,13 +6,13 @@ import {OnOff} from "./OnOff/OnOff";
 
 function App() {
     let [number, setNumber]=useState(0)
+    let [collapsed, setCollapsed] = useState(false)
+    let [value, setValue] = useState(false)
 
     return (
         <div className={"App"}>
-            <OnOff/>
-            <OnOff/>
-            <OnOff/>
-            <Accordion/>
+            <OnOff value={value} setValue={() => setValue(!value)}/>{value.toString()}
+            <Accordion collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
             <Rating value={number} setNumber={setNumber}/>
         </div>
     );

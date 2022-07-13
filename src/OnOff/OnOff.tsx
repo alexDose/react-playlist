@@ -1,31 +1,34 @@
-import React, {useState} from "react";
+import React from "react";
 
-export const OnOff = () => {
+type OnOff = {
+    value: boolean
+    setValue: () => void
+}
 
-    let [on, setOn] = useState(false)
+export const OnOff = (props: OnOff) => {
 
-    const onStyle = {
+    const Style = {
         display: "inline-block",
         padding: "2px",
         width: "30px",
         height: "20px",
         borderRadius: "2px",
         border: "1px solid black",
-        background: on ? "green" : "white",
+        background: props.value ? "palegreen" : "orangered",
         cursor: "pointer"
     }
 
-    const offStyle = {
-        display: "inline-block",
-        padding: "2px",
-        width: "30px",
-        height: "20px",
-        borderRadius: "2px",
-        border: "1px solid black",
-        marginLeft: "5px",
-        background: on ? "white" : "red",
-        cursor: "pointer"
-    }
+    /*    const offStyle = {
+            display: "inline-block",
+            padding: "2px",
+            width: "30px",
+            height: "20px",
+            borderRadius: "2px",
+            border: "1px solid black",
+            marginLeft: "5px",
+            background: value ? "white" : "red",
+            cursor: "pointer"
+        }*/
 
     const indiсatorStyle = {
         display: "inline-block",
@@ -34,14 +37,16 @@ export const OnOff = () => {
         height: "10px",
         borderRadius: "5px",
         border: "1px solid black",
-        background: on ? "green" : "red"
+        background: props.value ? "green" : "red"
+    }
 
+    const callback = () => {
+        props.setValue()
     }
 
     return (
         <div>
-            <div style={onStyle} onClick={() => setOn(true)}>On</div>
-            <div style={offStyle} onClick={() => setOn(false)}>Off</div>
+            <div style={Style} onClick={callback}>{props.value ? "On" : "Off"}</div>
             <div style={indiсatorStyle}></div>
         </div>
     )

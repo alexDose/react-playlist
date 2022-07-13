@@ -2,13 +2,17 @@ import React, {useState} from "react";
 import {AccordionTitle} from "./AccordionTitle";
 import {AccordionBody} from "./AccordionBody";
 
+type AccordionType = {
+    setCollapsed: () => void
+    collapsed: boolean
+}
 
-export const Accordion = () => {
-    let [collapsed, setCollapsed] = useState(false)
+export const Accordion = (props: AccordionType) => {
+
     return (
         <div>
-                <div onClick={() => setCollapsed(!collapsed)}><AccordionTitle/></div>
-                { collapsed && <AccordionBody/> }
+                <div><AccordionTitle title={"Menu"} callback={props.setCollapsed}/></div>
+                { props.collapsed && <AccordionBody/> }
         </div>
     )
 }
