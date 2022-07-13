@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Rating} from "./1/Rating";
-import {Accordion} from "./1/Accordion";
+import {Rating} from "./Accordion&Star/Rating";
+import {Accordion} from "./Accordion&Star/Accordion";
 import {OnOff} from "./OnOff/OnOff";
 
 function App() {
-    let [num, setNum]=useState(0)
+    let [number, setNumber]=useState(0)
+
     return (
-        <div>
+        <div className={"App"}>
             <OnOff/>
             <OnOff/>
             <OnOff/>
             <Accordion/>
-            <Rating value={num} setNum={setNum}/>
+            <Rating value={number} setNumber={setNumber}/>
         </div>
     );
 }
