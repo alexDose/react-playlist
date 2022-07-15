@@ -1,0 +1,34 @@
+.maxNum {
+    color: red;
+    margin: 10px 20px;
+    font-size: 60px;
+    background: rosybrown;
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+.general {
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    background: lightskyblue;
+}
+
+.num {
+    margin: 10px 20px;
+    font-size: 60px;
+    background: rosybrown;
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+button {
+    margin-top: 40px;
+    margin-left: 10px;
+    font-size: 30px;
+    background: rosybrown;
+    border-radius: 5px;
+    cursor: pointer;
+}
