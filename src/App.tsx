@@ -12,9 +12,9 @@ function App() {
 
     return (
         <div className={"App"}>
-            <OnOff value={value} setValue={() => setValue(!value)}/>{value.toString()}
+          {/*  <OnOff value={value} setValue={() => setValue(!value)}/>{value.toString()}
             <Accordion collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
-            <Rating value={number} setNumber={setNumber}/>
+            <Rating value={number} setNumber={setNumber}/>*/}
             <Counter/>
         </div>
     );
