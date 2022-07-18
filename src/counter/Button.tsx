@@ -2,7 +2,7 @@ type ButtonType = {
     callback: () => void
     name: string
     value: number
-    valueDis: boolean
+    valueDisabled: boolean
 }
 
 export const Button = (props: ButtonType) => {
@@ -11,5 +11,5 @@ export const Button = (props: ButtonType) => {
         props.callback()
     }
 
-    return <button disabled={props.valueDis} onClick={onClickHandler}>{props.name}</button>
+    return <button disabled={props.valueDisabled} onClick={onClickHandler}>{props.name}</button>
 }
