@@ -7,7 +7,7 @@ import {Counter} from "./counter/Counter";
 
 function App() {
     let [number, setNumber] = useState(0)
-    let [collapsed, setCollapsed] = useState(false)
+    let [collapsed, setCollapsed] = useState(true)
     let [value, setValue] = useState(false)
 
     let [valueCounter, setValueCounter] = useState(0)
@@ -22,10 +22,19 @@ function App() {
         }
     }
 
+    const callbackOnOff = (value: boolean) => {
+        setValue(value)
+    }
+
+    const callbackAccordion = (collapsed: boolean) => {
+        setCollapsed(collapsed)
+    }
+
     return (
         <div className={"App"}>
-            <OnOff value={value} setValue={() => setValue(!value)}/>{value.toString()}
-            <Accordion collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
+            <OnOff value={value} callback={callbackOnOff}/>
+            {value.toString()}
+            <Accordion title={"Menu"} collapsed={collapsed} callback={callbackAccordion}/>
             <Rating value={number} setNumber={setNumber}/>
             <Counter valueCounter={valueCounter} remove={remove} addValue={addValue}/>
         </div>

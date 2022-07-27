@@ -1,11 +1,11 @@
 import React from "react";
 
-type OnOff = {
+type OnOffType = {
     value: boolean
-    setValue: () => void
+    callback: (value: boolean) => void
 }
 
-export const OnOff = (props: OnOff) => {
+export const OnOff = (props: OnOffType) => {
 
     const Style = {
         display: "inline-block",
@@ -14,7 +14,7 @@ export const OnOff = (props: OnOff) => {
         height: "20px",
         borderRadius: "2px",
         border: "1px solid black",
-        background: props.value ? "palegreen" : "orangered",
+        background: props.value ? "palegreen" : "hotpink",
         cursor: "pointer"
     }
 
@@ -40,13 +40,13 @@ export const OnOff = (props: OnOff) => {
         background: props.value ? "green" : "red"
     }
 
-    const callback = () => {
-        props.setValue()
+    const onClickHandler = () => {
+        props.callback(!props.value)
     }
 
     return (
         <div>
-            <div style={Style} onClick={callback}>{props.value ? "On" : "Off"}</div>
+            <div style={Style} onClick={onClickHandler}>{props.value ? "On" : "Off"}</div>
             <div style={indiсatorStyle}></div>
         </div>
     )
